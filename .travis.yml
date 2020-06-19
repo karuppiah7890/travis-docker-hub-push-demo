@@ -13,6 +13,6 @@ script:
 
 deploy:
   provider: script
-  script: bash scripts/docker-push.sh
+  script: bash scripts/docker-push.sh $TRAVIS_TAG
   on:
     tags: true
