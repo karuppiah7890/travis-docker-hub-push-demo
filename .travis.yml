@@ -6,6 +6,13 @@ go:
 env:
   global:
     - GO111MODULE=on
+    - secure: KqEObtHnZJCK1YxAqQRJbrc/F/7LxGL6qT1h6YtSpos8KOwJjA9g5iydjfFRYL9zIadKftwZggreDF5EByKoxOczsw7K6Oc5O+M41qBlG0VehsFy1j6k6WpbW90zPGTfzs5tTDQW4NKL4B+ij2zFf9dFsxNzMnIVoag6E3gWelDxxxcC4iBmnkwFSnJnMBxJhlhnfcfixeEvVBeMFiD4gg1rmemqEbzoD4yXrx1IR0EHRGLoXnOqIeu8lYr89FE4/6P3f2zZALiJVSE1z45v0InY/5ckLgkgWgb8fwqL0UC6tOWWdpjmcbFeWImwxUP+XRibI56ihI/vjgW15hXklzvrKkg2BylGuGaZRUpTXn9kSij//pppJpI8coSeG9OgWa1jlu0Jn++cYObcXTD8MnELH4N7bF1PGDXcmyzNix0tYhGP4nG64zOXwEGYrKevCUtcjVkhs3Ywxjxf+06esKbrt2g8IZgAZ07A1OXQmftU5BL2hK6GBww8ylRQTIqmCcHXJNayw+O7cllGv1c5PhSIBxKEDWcOW2nw6w0Ft0NRG3wuQbWY46XqWg/JBRSIV/JL1756uoU1BhkaJSHsZI/Aj8zrE7kU8IlPsnvSZ6JF6ATFS4At7Tc8UfTeKF1Hun3JxQXi+CSBFG7CvZRQa6NESCLRm9QZ89FrXHQHEh8=
 
 script:
   - make all
+
+deploy:
+  provider: script
+  script: bash scripts/docker-push.sh
+  on:
+    tags: true
