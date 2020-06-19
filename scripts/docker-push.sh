@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 git_tag=$1
 
 if [ -z "$git_tag" ]
