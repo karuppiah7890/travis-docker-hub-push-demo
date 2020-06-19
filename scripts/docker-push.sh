@@ -8,8 +8,6 @@ then
     exit 1
 fi
 
-echo $git_tag hmm
-
 docker login --username karuppiah7890 --password $DOCKER_HUB_TOKEN
 docker build -t karuppiah7890/dobby -t karuppiah7890/dobby:$git_tag .
 docker push karuppiah7890/dobby
